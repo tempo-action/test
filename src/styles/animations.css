@@ -1,0 +1,549 @@
+@keyframes tempoFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tempo-fade-up {
+  animation: tempoFadeUp 0.45s ease both;
+}
+
+@keyframes tempoPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  70% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tempo-pop {
+  animation: tempoPop 0.35s ease both;
+}
+
+@keyframes tempoPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 183, 165, 0.35);
+  }
+
+  70% {
+    box-shadow: 0 0 0 14px rgba(24, 183, 165, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 183, 165, 0);
+  }
+}
+
+.tempo-pulse {
+  animation: tempoPulse 2s infinite;
+}
+
+@keyframes tempoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.tempo-float {
+  animation: tempoFloat 3.8s ease-in-out infinite;
+}
+
+@keyframes tempoTimerIntro {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.tempo-timer-intro {
+  animation: tempoTimerIntro 0.4s ease both;
+}
+
+/* HOME HERO PREMIUM */
+
+.home-hero-card {
+  position: relative;
+  border-radius: 38px;
+  padding: 20px;
+  margin-bottom: 16px;
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(255, 255, 255, 0.34) 0%,
+      rgba(255, 255, 255, 0) 32%
+    ),
+    linear-gradient(135deg, #ff7a2f 0%, #ff4f78 48%, #ffc83d 115%);
+  box-shadow:
+    0 24px 60px rgba(255, 122, 47, 0.24),
+    0 8px 20px rgba(255, 79, 120, 0.12);
+  overflow: hidden;
+  animation: heroEnter 520ms cubic-bezier(0.2, 1.1, 0.25, 1) both;
+}
+
+.home-hero-card::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -88px;
+  top: -72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ring-progress-animated {
+  transition: stroke-dashoffset 900ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.progress-fill-animated {
+  animation: progressGrow 900ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  transform-origin: left center;
+}
+
+@keyframes progressGrow {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* GENERAL PREMIUM EFFECTS */
+
+.premium-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card-shine::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -34%;
+  width: 76%;
+  height: 170%;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.34) 46%,
+    rgba(255, 255, 255, 0) 82%
+  );
+  transform: rotate(18deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.premium-pressable {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.premium-pressable:active {
+  transform: scale(0.97) translateY(1px);
+  filter: brightness(0.98);
+}
+
+/* HOME STATS / CURE / CTA */
+
+@keyframes statCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.home-stat-card {
+  will-change: transform, opacity;
+}
+
+@keyframes progressShimmer {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(160%);
+  }
+}
+
+.home-cure-card {
+  animation: tempoFadeUp 520ms cubic-bezier(0.2, 1.05, 0.25, 1) both;
+}
+
+.home-primary-action {
+  animation: primaryActionEnter 560ms cubic-bezier(0.2, 1.05, 0.25, 1) both;
+}
+
+.home-primary-action::after {
+  content: "";
+  position: absolute;
+  top: -70%;
+  left: -40%;
+  width: 60%;
+  height: 220%;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.32) 48%,
+    rgba(255, 255, 255, 0) 82%
+  );
+  transform: rotate(18deg);
+  animation: ctaShine 2800ms ease-in-out 900ms infinite;
+  pointer-events: none;
+}
+
+@keyframes primaryActionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ctaShine {
+  0% {
+    transform: translateX(-80%) rotate(18deg);
+    opacity: 0;
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  52% {
+    transform: translateX(260%) rotate(18deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(260%) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+.nearby-card {
+  animation: nearbyEnter 580ms cubic-bezier(0.2, 1.05, 0.25, 1) both;
+}
+
+@keyframes nearbyEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ACTIVITIES PAGE TRANSITIONS */
+
+@keyframes tempoPageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.activity-screen-enter {
+  animation: tempoPageEnter 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tempoAccordionOpen {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    max-height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    max-height: 1200px;
+  }
+}
+
+.activity-accordion-panel {
+  overflow: hidden;
+  transform-origin: bottom center;
+  animation: tempoAccordionOpen 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes tempoSoftPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.activity-soft-pop {
+  animation: tempoSoftPop 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* PREMIUM CHRONOMETER */
+
+@keyframes tempoChronoGlow {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.98);
+    opacity: 0.72;
+  }
+}
+
+.activity-chrono-glow {
+  animation: tempoChronoGlow 3.6s ease-in-out infinite;
+}
+
+@keyframes tempoChronoWave {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.28;
+  }
+
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+
+.activity-chrono-wave {
+  animation: tempoChronoWave 3.2s ease-out infinite;
+}
+
+.activity-chrono-wave-delay {
+  animation-delay: 1.45s;
+}
+
+@keyframes tempoChronoAuraSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.04);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.activity-chrono-aura-slow {
+  animation: tempoChronoAuraSpin 12s linear infinite;
+}
+
+@keyframes tempoChronoAuraSpinReverse {
+  0% {
+    transform: rotate(360deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.03);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.activity-chrono-aura-reverse {
+  animation: tempoChronoAuraSpinReverse 9s linear infinite;
+}
+
+@keyframes tempoChronoFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.015);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.activity-chrono-core {
+  animation: tempoChronoFloat 4.8s ease-in-out infinite;
+}
+
+@keyframes tempoChronoPulse {
+  0% {
+    box-shadow:
+      0 24px 48px rgba(255, 122, 47, 0.22),
+      0 0 0 0 rgba(255, 122, 47, 0.22),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.62);
+  }
+
+  70% {
+    box-shadow:
+      0 30px 60px rgba(255, 122, 47, 0.3),
+      0 0 0 18px rgba(255, 122, 47, 0),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  }
+
+  100% {
+    box-shadow:
+      0 24px 48px rgba(255, 122, 47, 0.22),
+      0 0 0 0 rgba(255, 122, 47, 0),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.62);
+  }
+}
+
+.activity-chrono-core-running {
+  animation:
+    tempoChronoFloat 4.8s ease-in-out infinite,
+    tempoChronoPulse 1.8s ease-out infinite;
+}
+
+@keyframes tempoChronoOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.activity-chrono-orbit {
+  animation: tempoChronoOrbit 12s linear infinite;
+}
+
+
+@keyframes tempoChronoDigits {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 122, 47, 0);
+  }
+
+  50% {
+    transform: scale(1.02);
+    text-shadow: 0 6px 18px rgba(255, 122, 47, 0.14);
+  }
+
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255, 122, 47, 0);
+  }
+}
+
+.activity-chrono-digits-running {
+  animation: tempoChronoDigits 1.6s ease-in-out infinite;
+}
+
+/* PLAY / PAUSE ICON BUTTON */
+
+@keyframes tempoIconButtonShine {
+  0% {
+    transform: translateX(-160%) skewX(-18deg);
+  }
+
+  60% {
+    transform: translateX(170%) skewX(-18deg);
+  }
+
+  100% {
+    transform: translateX(170%) skewX(-18deg);
+  }
+}
+
+.activity-play-icon-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.activity-play-icon-button::after {
+  content: "";
+  position: absolute;
+  top: -45%;
+  bottom: -45%;
+  left: 0;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: translateX(-160%) skewX(-18deg);
+  animation: tempoIconButtonShine 3.8s ease-in-out infinite;
+  pointer-events: none;
+}

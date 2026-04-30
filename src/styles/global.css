@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap");
+
+:root {
+  font-family: "Nunito", system-ui, sans-serif;
+  color: #172033;
+  background: #fff7ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  min-height: 100%;
+  background: #fff7ec;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 200, 61, 0.24) 0%,
+      rgba(255, 247, 236, 0) 30%
+    ),
+    radial-gradient(
+      circle at 95% 12%,
+      rgba(255, 79, 120, 0.16) 0%,
+      rgba(255, 247, 236, 0) 28%
+    ),
+    linear-gradient(180deg, #fff7ec 0%, #fff1e3 100%);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  color: #172033;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a49b91;
+}
+
+img {
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Conteneur mobile principal */
+.app-mobile {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      rgba(255, 200, 61, 0.22) 0%,
+      rgba(255, 247, 236, 0) 34%
+    ),
+    radial-gradient(
+      circle at 100% 10%,
+      rgba(255, 79, 120, 0.14) 0%,
+      rgba(255, 247, 236, 0) 30%
+    ),
+    linear-gradient(180deg, #fff7ec 0%, #fff1e3 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Page premium utilisée par les nouveaux écrans */
+.premium-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px 18px 118px;
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      rgba(255, 200, 61, 0.22) 0%,
+      rgba(255, 247, 236, 0) 34%
+    ),
+    radial-gradient(
+      circle at 100% 10%,
+      rgba(255, 79, 120, 0.14) 0%,
+      rgba(255, 247, 236, 0) 30%
+    ),
+    linear-gradient(180deg, #fff7ec 0%, #fff1e3 100%);
+}
+
+/* Ancienne classe conservée pour compatibilité preview */
+.screen-page {
+  min-height: 100vh;
+  padding: 18px 20px 110px;
+}
+
+/* Cartes avec effet de brillance doux */
+.premium-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card-shine::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -30%;
+  width: 70%;
+  height: 160%;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 45%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+/* Boutons / cartes cliquables */
+.premium-pressable {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.premium-pressable:active {
+  transform: scale(0.97) translateY(1px);
+  filter: brightness(0.98);
+}
+
+/* Glass effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(23, 32, 51, 0.08);
+  box-shadow: 0 18px 42px rgba(23, 32, 51, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+/* Utilitaires texte */
+.text-muted {
+  color: #817a71;
+}
+
+.text-soft {
+  color: #a49b91;
+}
+
+/* Scrollbar masquée */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Safe bottom pour éviter la nav */
+.safe-bottom {
+  padding-bottom: 118px;
+}
+
+/* Accessibilité focus */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(255, 122, 47, 0.35);
+  outline-offset: 3px;
+}
+
+/* Petites animations de base */
+@keyframes premiumFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.premium-fade-up {
+  animation: premiumFadeUp 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes premiumPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  70% {
+    transform: scale(1.035);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.premium-pop {
+  animation: premiumPop 460ms cubic-bezier(0.2, 1.4, 0.3, 1) both;
+}
+
+@keyframes premiumShimmer {
+  0% {
+    transform: translateX(-130%) rotate(18deg);
+  }
+  100% {
+    transform: translateX(190%) rotate(18deg);
+  }
+}
+
+.premium-shimmer::before {
+  animation: premiumShimmer 2.8s ease-in-out infinite;
+}
+
+@keyframes progressGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(255, 122, 47, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(255, 122, 47, 0.35));
+  }
+}
+
+.progress-glow {
+  animation: progressGlow 2.2s ease-in-out infinite;
+}
